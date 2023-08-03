@@ -1,0 +1,15 @@
+<div class="my-3">
+  <% if notice %>
+    <div class="notification is-primary">
+      <button class="delete"></button>
+      <%= notice %>
+    </div>
+  <% end %>
+
+  <% if alert %>
+    <div class="notification is-danger">
+      <button class="delete"></button>
+      <%= alert %>
+    </div>
+  <% end %>
+</div>
