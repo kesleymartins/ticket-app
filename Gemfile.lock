@@ -166,6 +166,10 @@ GEM
     sqlite3 (1.6.3-x86_64-linux)
     thor (1.2.2)
     timeout (0.4.0)
+    turbo-rails (1.4.0)
+      actionpack (>= 6.0.0)
+      activejob (>= 6.0.0)
+      railties (>= 6.0.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     warden (1.2.9)
@@ -186,6 +190,7 @@ DEPENDENCIES
   rails (~> 7.0.6)
   sprockets-rails
   sqlite3 (~> 1.4)
+  turbo-rails (~> 1.4)
   tzinfo-data
 
 RUBY VERSION
