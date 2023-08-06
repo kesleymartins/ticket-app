@@ -1,0 +1,33 @@
+<%= form_with(model: [@trade]) do |f| %>
+  <% if @trade.errors.any? %>
+    <article class="message is-danger">
+      <div class="message-header">
+        <p>Corrija os seguintes erros antes de salvar:</p>
+      </div>
+      <div class="message-body">
+        <ul>
+          <% @trade.errors.each do |error| %>
+            <li>
+              <span><%= error.full_message %></span>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </article>
+  <% end %>
+
+  <div class="field">
+    <%= f.text_field :place, class: 'input', placeholder: 'onde você está?' %>
+  </div>
+
+  <div class="field">
+    <div class="select">
+      <%= f.select(:have, options_for_select(WeekDay.to_a)) %>
+    </div>
+    <div class="select">
+      <%= f.select(:wanted, options_for_select(WeekDay.to_a)) %>
+    </div>
+
+    <%= f.submit 'Publicar', class: 'button is-dark is-outlined' %>
+  </div>
+<% end %>

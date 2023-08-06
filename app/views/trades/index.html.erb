@@ -1,0 +1,25 @@
+<div class="box is-flex is-justify-content-space-between is-align-items-center">
+  <section>
+    <h2 class="title is-1">Anúncios</h2>
+  </section>
+
+  <section>
+    <%= link_to 'Novo anuncio', new_trade_path, class: 'button is-outlined', data: { turbo_frame: :modal } %>
+  </section>
+</div>
+
+<%= turbo_frame_tag :trades do %>
+  <% @trades.each do |trade| %>
+    <%= render 'trade', trade: trade %>
+  <% end %>
+
+  <% unless @trades.exists? %>
+    <article class="message is-info">
+      <div class="message-body">
+        Nenhum Anúncio publicado
+      </div>
+    </article>
+  <% end %>
+<% end %>
+
+<%= turbo_frame_tag :modal %>

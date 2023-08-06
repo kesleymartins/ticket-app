@@ -1,0 +1,5 @@
+<%= turbo_stream.prepend :trades do %>
+  <%= render 'trade', trade: @trade %>
+<% end %>
+
+<%= turbo_stream.update :modal %>
