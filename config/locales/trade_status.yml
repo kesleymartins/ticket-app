@@ -1,0 +1,5 @@
+en:
+  enumerations:
+    trade_status:
+      open: 'Open'
+      closed: 'Closed'
