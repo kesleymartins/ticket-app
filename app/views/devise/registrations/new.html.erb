@@ -15,7 +15,13 @@
 
     <div class="field">
       <%= f.label :whatsapp_number, class: 'label' %>
-      <%= f.text_field :whatsapp_number, placeholder: '(000) 9 9999-9999', class: 'input' %>
+      <%= f.text_field :whatsapp_number, 
+        placeholder: '(000) 9 9999-9999',
+        data: {
+          controller: 'mask--phone-number'
+        },
+        class: 'input phone-number' 
+      %>
     </div>
 
     <div class="field">
