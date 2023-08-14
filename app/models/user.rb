@@ -6,4 +6,6 @@ class User < ApplicationRecord
 
   validates :name, presence: true
   validates :whatsapp_number, presence: true
+
+  has_many :trades, dependent: :destroy
 end
