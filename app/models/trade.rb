@@ -7,6 +7,8 @@ class Trade < ApplicationRecord
   validates :have, presence: true
   validates :wanted, presence: true
 
+  belongs_to :user
+
   before_create :defaults
 
   private
