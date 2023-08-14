@@ -2,23 +2,37 @@
   <div class="box is-flex is-justify-content-space-between is-align-items-center my-2">
     <section>
       <div>
-        <strong>Tenho:</strong>
+        <strong>Nome:</strong>
+        <span><%= trade.user.name %></span>
+      </div>
+
+      <div>
+        <strong>Whatsapp:</strong>
+        <span><%= trade.user.whatsapp_number %></span>
+      </div>
+    </section>
+    
+    <section class="is-flex has-text-centered">
+      <div class="mx-2">
+        <p class="has-text-weight-semibold">Tenho</p>
         <span><%= trade.have_humanize %></span>
       </div>
 
-      <div>
-        <strong>Quero:</strong>
+      <div class="mx-2">
+        <p class="has-text-weight-semibold">Quero</p>
         <span><%= trade.wanted_humanize %></span>
       </div>
 
-      <div>
-        <strong>Local:</strong>
+      <div class="mx-2">
+        <p class="has-text-weight-semibold">Local</p>
         <span><%= trade.place %></span>
       </div>
     </section>
 
     <section>
-      <%= link_to 'Fechar', close_trade_path(trade), data: { turbo_method: :put }, class: 'button is-danger is-outlined' %>
+      <% if trade.user == current_user %>
+        <%= link_to 'Fechar', close_trade_path(trade), data: { turbo_method: :put }, class: 'button is-danger is-outlined' %>
+      <% end %>
     </section>
   </div>
 <% end %>
