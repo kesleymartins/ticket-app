@@ -11,6 +11,7 @@ class TradesController < ApplicationController
 
   def create
     @trade = Trade.new(trade_params)
+    @trade.user = current_user
 
     if @trade.save
       turbo_stream
