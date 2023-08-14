@@ -7,7 +7,7 @@ export default class extends Controller {
     new Cleave('.phone-number', {
       delimiters: ['(', ') ', ' ', '-'],
       blocks: [0, 3, 1, 4, 4],
-      uppercase: true
+      numericOnly: true,
     })
   }
 }
