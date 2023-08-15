@@ -1,6 +1,6 @@
 class TradesController < ApplicationController
-  before_action :authenticate_user!
-  
+  before_action :authenticate_user!, except: :index
+
   def index
     @trades = Trade.where(status: TradeStatus::OPEN).order(created_at: :desc)
   end
