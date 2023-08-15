@@ -3,9 +3,11 @@
     <h2 class="title is-1">Anúncios</h2>
   </section>
 
-  <section>
-    <%= link_to 'Novo anuncio', new_trade_path, class: 'button is-outlined', data: { turbo_frame: :modal } %>
-  </section>
+  <% if user_signed_in?  %>
+    <section>
+      <%= link_to 'Novo anuncio', new_trade_path, class: 'button is-outlined', data: { turbo_frame: :modal } %>
+    </section>
+  <% end %>
 </div>
 
 <%= turbo_frame_tag :trades do %>
